@@ -1,9 +1,9 @@
 class Song:
     def __init__(self, name, artist, release_date, popularity, length, 
-                 album="Unknown", song_id="Unknown", danceability=0.0, 
-                 acousticness=0.0, energy=0.0, instrumentalness=0.0, 
-                 liveness=0.0, valence=0.0, loudness=0.0, speechiness=0.0, 
-                 tempo=0.0, key=0, time_signature=0, mood="Unknown"):
+                 album, song_id, danceability, 
+                 acousticness, energy, instrumentalness, 
+                 liveness, valence, loudness, speechiness, 
+                 tempo, key, time_signature, mood):
         self.name = name
         self.artist = artist
         self.release_date = release_date
@@ -23,3 +23,6 @@ class Song:
         self.key = key
         self.time_signature = time_signature
         self.mood = mood
+        
+    def __repr__(self):
+        return f"Song(name='{self.name}', artist='{self.artist}', album='{self.album}', release_date='{self.release_date}',popularity='{self.popularity}' , mood='{self.mood}')\n"

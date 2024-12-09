@@ -19,16 +19,29 @@ class Main:
         # Step 2: Display all songs
         print("\nAvailable Songs:")
         songs_list = self.song_service.get_songs()
-        for song in songs_list:
-            name, artist, release_date, popularity, length = song
-            print(f"Name: {name}, Artist: {artist}, Release Date: {release_date}, "
-                  f"Popularity: {popularity}, Length: {length:.2f} seconds")
+        
 
         # Step 3: Calculate total duration of all songs
         total_duration = self.song_service.duration()
         print(f"\nTotal Duration of All Songs: {total_duration}")
-
-
+        self.song_service.acousticness_vs_energy()
+        print(self.song_service.most_popular_song())
+        print(self.song_service.latest_songs(10))
+        print(self.song_service.aggregated_stats_by_mood())
+        print(self.song_service.longest_song())
+        print(self.song_service.shortest_song())
+        filtered_list = self.song_service.recommend_songs("Sad",10)
+        duration = self.song_service.duration(filtered_list)
+        print("Total songs :",len(filtered_list))
+        print("Total duration of songs :", duration)
+        print("Songs for you", filtered_list)
+        
+        
+       
+        
+        
+        
+        
 if __name__ == "__main__":
     # Path to the CSV file
     csv_file_path = "cleaned_data_moods.csv"
