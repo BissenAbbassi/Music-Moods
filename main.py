@@ -12,24 +12,24 @@ class Main:
 
     def run(self):
         # Step 1: Check if songs are loaded
-        if not self.loader.songs:
+        """if not self.loader.songs:
             print("No songs found. Exiting program.")
             return
 
         # Step 2: Display all songs
         print("\nAvailable Songs:")
-        songs_list = self.song_service.get_songs()
+        songs_list = self.song_service.get_songs()"""
         
 
         # Step 3: Calculate total duration of all songs
-        total_duration = self.song_service.duration()
-        print(f"\nTotal Duration of All Songs: {total_duration}")
+        #total_duration = self.song_service.duration()
+        #print(f"\nTotal Duration of All Songs: {total_duration}")
         self.song_service.acousticness_vs_energy()
-        print(self.song_service.most_popular_song())
-        print(self.song_service.latest_songs(10))
+        #print(self.song_service.most_popular_song())
+        #print(self.song_service.latest_songs(10))
         print(self.song_service.aggregated_stats_by_mood())
-        print(self.song_service.longest_song())
-        print(self.song_service.shortest_song())
+        #print(self.song_service.longest_song())
+        #print(self.song_service.shortest_song())
         filtered_list = self.song_service.recommend_songs("Sad",10)
         duration = self.song_service.duration(filtered_list)
         print("Total songs :",len(filtered_list))
