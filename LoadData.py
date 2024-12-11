@@ -3,14 +3,6 @@ from typing import List
 
 from SongEntity import Song
 
-
-class Loaddata:
-    def __init__(self, csv_path: str):
-        self.csv_path = csv_path
-        self.songs: List[Song] = []  # Initialize an empty list for songs
-
-
-
 class Loaddata:
     def __init__(self, csv_path: str):
         self.csv_path = csv_path
