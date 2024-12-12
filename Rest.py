@@ -2,7 +2,6 @@ from fastapi import FastAPI, Query
 from fastapi.responses import JSONResponse
 from LoadData import Loaddata
 from SongService import songservice
-from typing import List
 
 app = FastAPI()
 
